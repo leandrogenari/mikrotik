@@ -1,0 +1,6 @@
+:global fullIP1 [/ip address get [/ip address find interface=Speedy] address];
+:global endloc [:find $fullIP1 "/" -1];
+:global fullIP [:pick $fullIP1 "0" $endloc];
+
+
+/ip firewall nat set [find comment="DESCRICAO"] dst-address=$fullIP
